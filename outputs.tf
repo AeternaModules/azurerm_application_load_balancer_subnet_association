@@ -1,3 +1,7 @@
+output "application_load_balancer_subnet_associations_id" {
+  description = "Map of id values across all application_load_balancer_subnet_associations, keyed the same as var.application_load_balancer_subnet_associations"
+  value       = { for k, v in azurerm_application_load_balancer_subnet_association.application_load_balancer_subnet_associations : k => v.id }
+}
 output "application_load_balancer_subnet_associations_application_load_balancer_id" {
   description = "Map of application_load_balancer_id values across all application_load_balancer_subnet_associations, keyed the same as var.application_load_balancer_subnet_associations"
   value       = { for k, v in azurerm_application_load_balancer_subnet_association.application_load_balancer_subnet_associations : k => v.application_load_balancer_id }
